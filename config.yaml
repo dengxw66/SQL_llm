@@ -1,0 +1,125 @@
+db_path: ./DB/SQL.db
+
+TABLE: 
+  people_info:
+    info: 人员基础信息表,主要存储人员的基本信息
+    field:
+      name: [姓名, text]
+      gender: [性别, text]  # 1男，0女
+      ethnicity: [名族, text]
+      education_level: [学历, int]  # 0文盲、1小学、2初中、3高中、4中专、5大专、6大学、7研究生硕士、8研究生博士
+      id_number: [身份证号码, text]
+      phone_number: [联系电话, text]
+      registered_address: [户籍地址, text]
+      residential_address: [居住地址, text]
+      category: [人员类别, text]
+      judgment_level: [研判等级, int]  # 1高级、2中级、3低级
+      village: [乡村, text]
+      community: [社区, text]
+  camera_info:
+    info: 摄像头基础信息,主要存储摄像头的基本信息
+    field:
+      camera_model: [摄像头型号, text]
+      coordinates: [经纬度, text]
+      osd: [摄像头OSD, text]
+  person_recognition:
+    info: 人员识别,主要存储人员识别信息
+    field:
+      time: [时间, text]
+      name: [姓名, text]
+      camera_id: [摄像头编号, text]
+      big_image: [大图, text]
+      small_image: [小图, text]
+      vl_output: [VL输出, text]
+      glm_output: [GLM输出, text]
+  event_record:
+    info: 事件记录,主要存储事件发生的记录
+    field:
+      time: [时间, text]
+      camera_id: [摄像头编号, text]
+      name: [姓名, text]
+      event_type: [事件类型, text]  # 打架, 聚众, 翻越等
+      big_image: [大图, text]
+      small_image: [小图, text]
+      vl_output: [VL输出, text]
+      glm_output: [GLM输出, text]
+  vehicle_info:
+    info: 车辆基础信息表,主要存储车辆的基本信息
+    field:
+      plate_number: [车牌号, text]
+      owner_name: [车主姓名, text]
+      color: [颜色, text]
+      vehicle_type: [车辆类型, text]
+      brand_model: [品牌型号, text]
+      usage: [使用性质, text]
+      vin: [车辆识别代号, text]
+      engine_number: [发动机号, text]
+  vehicle_recognition:
+    info: 车辆识别,主要存储车辆识别信息
+    field:
+      time: [时间, text]
+      plate_number: [车牌, text]
+      camera_id: [摄像头编号, text]
+      big_image: [大图, text]
+      small_image: [小图, text]
+      vl_output: [VL输出, text]
+      glm_output: [GLM输出, text]
+
+TABLE_Values: 
+  people_info:
+    field:
+      name: [张三, 李四, 王五]
+      gender: [1, 0, 1]
+      ethnicity: [汉族, 回族, 满族]
+      education_level: [6, 7, 4]
+      id_number: [123456789012345678, 234567890123456789, 345678901234567890]
+      phone_number: [13800138000, 13900139000, 13700137000]
+      registered_address: [北京市海淀区, 上海市浦东新区, 广州市天河区]
+      residential_address: [北京市朝阳区, 上海市黄浦区, 广州市白云区]
+      category: [普通人员, 重点人员, 普通人员]
+      judgment_level: [1, 2, 3]
+      village: [海淀村, 浦东村, 天河村]
+      community: [海淀社区, 浦东社区, 天河社区]
+  camera_info:
+    field:
+      camera_model: [型号A, 型号B, 型号C]
+      coordinates: ["39.9042, 116.4074", "31.2304, 121.4737", "23.1291, 113.2644"]
+      osd: [OSD信息1, OSD信息2, OSD信息3]
+  person_recognition:
+    field:
+      time: [2023-01-01 10:00:00, 2023-01-02 11:00:00, 2023-01-03 12:00:00]
+      name: [张三, 李四, 王五]
+      camera_id: [cam001, cam002, cam003]
+      big_image: [big_img1.jpg, big_img2.jpg, big_img3.jpg]
+      small_image: [small_img1.jpg, small_img2.jpg, small_img3.jpg]
+      vl_output: [vl_output1, vl_output2, vl_output3]
+      glm_output: [glm_output1, glm_output2, glm_output3]
+  event_record:
+    field:
+      time: [2023-01-01 10:30:00, 2023-01-02 11:30:00, 2023-01-03 12:30:00]
+      camera_id: [cam001, cam002, cam003]
+      name: [张三, 李四, 王五]
+      event_type: [打架, 聚众, 翻越]
+      big_image: [big_img4.jpg, big_img5.jpg, big_img6.jpg]
+      small_image: [small_img4.jpg, small_img5.jpg, small_img6.jpg]
+      vl_output: [vl_output4, vl_output5, vl_output6]
+      glm_output: [glm_output4, glm_output5, glm_output6]
+  vehicle_info:
+    field:
+      plate_number: [京A12345, 沪B67890, 粤C12345]
+      owner_name: [张三, 李四, 王五]
+      color: [红色, 蓝色, 黑色]
+      vehicle_type: [轿车, SUV, 卡车]
+      brand_model: [品牌A型号A, 品牌B型号B, 品牌C型号C]
+      usage: [家庭用, 商业用, 家庭用]
+      vin: [VIN1234567890, VIN0987654321, VIN1122334455]
+      engine_number: [ENG123456, ENG654321, ENG112233]
+  vehicle_recognition:
+    field:
+      time: [2023-01-01 13:00:00, 2023-01-02 14:00:00, 2023-01-03 15:00:00]
+      plate_number: [京A12345, 沪B67890, 粤C12345]
+      camera_id: [cam001, cam002, cam003]
+      big_image: [big_img7.jpg, big_img8.jpg, big_img9.jpg]
+      small_image: [big_img7.jpg, big_img8.jpg, big_img9.jpg]
+      vl_output: [vl_output7, vl_output8, vl_output9]
+      glm_output: [glm_output7, glm_output8, glm_output9]
