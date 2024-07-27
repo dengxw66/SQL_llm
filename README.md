@@ -29,6 +29,7 @@ local_database.ipynb
 # 基于GLM生成SQL
 main_gui.ipynb(GUI界面版)
 main_direct.ipynb(直接输出版)
+main_direct_refine.ipynb(过滤用户无效输入)
 ```
 
 ```
